@@ -1,0 +1,134 @@
+/* General Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #19da79;
+  padding: 1.25rem; /* 20px to rem */
+  position: relative;
+}
+
+.navbar-logo img {
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.05);
+}
+
+.navbar-items {
+  display: flex;
+  list-style-type: none;
+  gap: 1.875rem; /* 30px to rem */
+}
+
+.navbar-items li {
+  position: relative;
+}
+
+/* Icon Text Styles */
+.icon-text {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1.125rem; /* 18px to rem */
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.icon-text:hover {
+  color: #bdb3b3;
+}
+
+.icon-text i {
+  margin-left: 0.5rem; /* 8px to rem */
+}
+
+/* Dropdown Styles */
+ul.absolute {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+  transform: translateY(0.625rem); /* 10px to rem */
+  background-color: #ffffff;
+  border-radius: 0.5rem; /* 8px to rem */
+  box-shadow: 0px 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 4px to rem */
+  position: absolute;
+  z-index: 1000;
+}
+
+.relative:hover ul.absolute {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown Items */
+ul.absolute li {
+  padding: 0.75rem; /* 12px to rem */
+  color: #333;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+ul.absolute li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button Styles */
+.navbar-buttons {
+  display: flex;
+  gap: 0.625rem; /* 10px to rem */
+}
+
+.btn-adopt, .btn-donate {
+  background-color: #f8e5b8;
+  border: none;
+  border-radius: 0.3125rem; /* 5px to rem */
+  padding: 0.625rem 1.25rem; /* 10px 20px to rem */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-adopt:hover, .btn-donate:hover {
+  background-color: #e0c68c;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-items {
+    flex-direction: column;
+    gap: 0.625rem; /* 10px to rem */
+  }
+
+  .navbar-buttons {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn-adopt, .btn-donate {
+    width: 48%;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-text {
+    font-size: 1rem; /* 16px to rem */
+  }
+
+  .navbar-items {
+    gap: 0.5rem; /* 8px to rem */
+  }
+
+  .btn-adopt, .btn-donate {
+    width: 100%;
+  }
+}

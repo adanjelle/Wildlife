@@ -1,0 +1,126 @@
+.home-container {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: background-image 1s ease-in-out;
+  padding: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.overlay {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fade-in 1s ease-in-out;
+  max-width: 600px;
+  margin: auto;
+}
+
+.overlay h1 {
+  font-family: 'Webkins', sans-serif;
+  font-size: 4rem;
+  line-height: 1.2;
+  animation: fade-in 1s ease-in-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.excc {
+  font-family: 'Webkins', sans-serif;
+  font-size: 0.9rem;
+  opacity: 0; /* Start with opacity 0 */
+  animation: fade-in 1s ease-in-out 0.5s; /* Delay animation by 0.5s */
+  animation-fill-mode: forwards; /* Ensure the opacity stays at 1 after animation */
+  margin-top: 20px;
+}
+
+.loop-button,
+.loop-buttons {
+  font-family: 'Webkins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: wheat;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  animation: fade-in 1s ease-in-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  transition: background-color 0.3s ease;
+}
+
+.loop-button:hover,
+.loop-buttons:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Responsive Design */
+/* For tablets and mobile devices (up to 1024px wide) */
+@media (max-width: 1024px) {
+  .overlay h1 {
+    font-size: 3.5rem;
+  }
+
+  .excc {
+    font-size: 1rem;
+  }
+
+  .loop-button,
+  .loop-buttons {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+  }
+}
+
+/* For smaller mobile devices (up to 768px wide) */
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .excc {
+    font-size: 0.9rem;
+  }
+
+  .loop-button,
+  .loop-buttons {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+}
+
+/* For even smaller devices (up to 580px wide) */
+@media (max-width: 580px) {
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .excc {
+    font-size: 0.8rem;
+  }
+
+  .loop-button,
+  .loop-buttons {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
