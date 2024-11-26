@@ -1,0 +1,55 @@
+.visiting-section {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  flex-direction: row-reverse; /* Swaps the positions of the image and the card */
+}
+
+.visiting-image {
+  width: 60%; /* Ensure image takes up more space */
+  height: auto;
+  max-height: 400px; /* Set a maximum height for consistency */
+}
+
+.visiting-card {
+  width: 40%; /* Adjusted width */
+  background: #e9ecef; /* Semi-transparent background */
+  padding: 25px;
+  margin-right: 5px; /* Changed from margin-left to margin-right */
+  height: 400px; /* Set a fixed height to match the image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(42, 38, 38, 0.1);
+  font-size: 1rem;
+  line-height: 2.3;
+}
+
+.visiting-card h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2rem; /* Increased font size */
+  
+  color: rgb(69, 67, 67); /* Make the font bold */
+}
+
+.visiting-card p {
+  margin: 0;
+  text-align: center; /* Center text inside the card */
+}
+
+.view-more-button {
+  margin-top: 10px;
+  padding: 5px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.view-more-button:hover {
+  background-color: #45a049;
+}

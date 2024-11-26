@@ -1,0 +1,87 @@
+.conservation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.featured-news {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; /* Reduced margin */
+}
+
+.featured-news-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-style: italic;
+  
+}
+
+.featured-news-description {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.conservation-card {
+  flex: 1 1 calc(25% - 30px); /* Reduced space between cards */
+ 
+  margin: 10px; /* Reduced margin */
+  
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.conservation-card:hover {
+  transform: translateY(-10px);
+}
+
+.conservation-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.conservation-image:hover {
+  transform: scale(1.05);
+}
+
+.conservation-content {
+  padding: 20px;
+ 
+}
+
+.conservation-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #e63946;
+  font-style: italic;
+}
+
+.conservation-description {
+  font-size: 1rem;
+  color: #747474;
+}
+
+/* Responsive Design */
+/* For tablets (up to 1024px wide) */
+@media (max-width: 1024px) {
+  .conservation-card {
+    flex: 1 1 calc(33.33% - 30px); /* Three cards per row, reduced space */
+  }
+}
+
+/* For mobile devices (up to 768px wide) */
+@media (max-width: 768px) {
+  .conservation-card {
+    flex: 1 1 calc(50% - 30px); /* Two cards per row, reduced space */
+  }
+}
+
+/* For small devices (up to 480px wide) */
+@media (max-width: 480px) {
+  .conservation-card {
+    flex: 1 1 100%; /* One card per row */
+  }
+}

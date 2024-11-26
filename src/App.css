@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app.default {
+  background-color: #ffffff; /* Default background color */
+  color: #000000; /* Default text color */
+}
+
+.app.yellow {
+  background-color: #ffeb3b; /* Yellow background color */
+  color: #000000; /* Black text color for readability */
+}
+
+.navbar-link {
+  background-color:#4f772d; /* Fixed color for navbar background */
+  padding: 10px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  margin: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #ffffff; /* Fixed color for nav links */
+}
+
+.navbar-links a:hover {
+  color: #ff9800; /* Darker shade of yellow for hover effect */
+}
+
+/* Home Page Styling */
+.home {
+  text-align: center;
+  padding: 50px;
+}
+
+.home h1, .home p {
+  color: inherit; /* Inherit text color based on the theme */
+}

@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Main Contact Container */
+.contact-container {
+  max-width: 1220px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex; /* Flexbox for side-by-side layout */
+  flex-direction: row; /* Arrange children in a row */
+  justify-content: space-between; /* Add space between sections */
+  align-items: flex-start; /* Align items to the top */
+}
+
+/* Heading Styles */
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #381C1C;
+ 
+}
+/* Contact Form Section */
+.contact-form {
+  flex: 1; /* Allow the form section to grow */
+  max-width: 50%;
+  margin-top: 63px; 
+}
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #0f5425;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.submit-button {
+  background-color: #6a994e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Submitted Details Section */
+.submitted-details {
+  margin-top: 20px;
+}
+
+.submitted-details h2 {
+  font-size: 1.5rem;
+  color:  #6a994e;
+  
+}
+
+.submitted-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.submitted-details li {
+  background: #f1f1f1;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.submitted-details p {
+  margin: 5px 0;
+}
+
+/* Reach Us Section */
+.reach-us-wrapper {
+  flex: 1; /* Allow this section to grow */
+  max-width: 70%; /* Adjust width to allow more content */
+  padding: 20px 30px; /* Add more padding for spacious layout */
+   /* Light background for contrast */
+  border-radius: 8px;
+ 
+   /* Subtle shadow */
+}
+
+.reach-us-header {
+  font-size: 2rem; /* Slightly larger font size */
+  color: #381C1C;
+  margin-bottom: 20px; /* Increase spacing below header */
+  text-align: center;
+}
+
+.reach-us-content {
+  font-size: 1.2rem; /* Increase font size for better readability */
+  line-height: 2.8; /* Increase line spacing */
+  color: #333;
+  margin-bottom: 20px; /* Add space after the content */
+}
+
+.reach-us-content i {
+  color: #007bff;
+  margin-right: 10px;
+}
+
+.reach-us-icons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px; /* Add more space above icons */
+}
+
+.reach-us-icons i {
+  font-size: 1.8rem; /* Increase icon size */
+  color: #007bff;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.reach-us-icons i:hover {
+  color: #0056b3;
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center-align items */
+  }
+
+  .contact-form,
+  .reach-us-wrapper {
+    max-width: 100%; /* Full width on small screens */
+    margin-bottom: 20px; /* Add spacing between sections */
+  }
+}

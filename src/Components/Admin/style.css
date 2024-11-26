@@ -1,0 +1,239 @@
+/* Table Styles */
+.table-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: centre;
+  
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button Styles */
+button {
+  padding: 8px 16px;
+  background-color: Green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table {
+      font-size: 14px;
+  }
+
+  th, td {
+      padding: 8px;
+  }
+}
+.table-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.reports-table th, .reports-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.reports-table th {
+  background-color: #f4f4f4;
+}
+
+.report-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+/* Modal Background */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: linear-gradient(135deg, #ffffff, #f7f7f7); /* Subtle gradient */
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: scaleUp 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* Heading */
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Form Styling */
+.edit-form label {
+  display: block;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #555;
+  text-align: left;
+}
+
+.edit-form label span {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #007bff;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.form-textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.save-btn,
+.cancel-btn {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin: 0 5px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.save-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes scaleUp {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+

@@ -1,0 +1,98 @@
+.lodge-section {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  flex-direction: row-reverse; /* Swaps the positions of the image and the card */
+}
+
+.lodge-image {
+  width: 60%; /* Ensure image takes up more space */
+  height: auto;
+  max-height: 400px; /* Set a maximum height for consistency */
+}
+
+.lodge-card {
+  width: 40%; /* Adjusted width */
+  background: #e9ecef; /* Semi-transparent background */
+  padding: 25px;
+  margin-right: 5px; /* Changed from margin-left to margin-right */
+  height: 400px; /* Set a fixed height to match the image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(42, 38, 38, 0.1);
+  font-size: 1rem;
+  line-height: 2.3;
+}
+
+.lodgeh2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem; /* Increased font size */
+  
+  color: rgb(69, 67, 67); /* Make the font bold */
+}
+.lodge-card p {
+  margin: 0;
+}
+.adesh1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.adesh1 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.adesh1 p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: black;
+  height: 100px; 
+  width:606px ;/* Adjust width for better readability */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .adesh1 {
+    padding: 15px;
+  }
+
+  .adesh1 h2 {
+    font-size: 1.8rem; /* Adjust font size for smaller screens */
+  }
+
+  .adesh1 p {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    line-height: 1.4rem; /* Adjust line height for better readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .adesh1 {
+    padding: 10px;
+  }
+
+  .adesh1 h2 {
+    font-size: 1.5rem; /* Adjust font size for mobile devices */
+  }
+
+  .adesh1 p {
+    font-size: 0.8rem; /* Adjust font size for mobile devices */
+    line-height: 1.3rem; /* Adjust line height for better readability */
+  }
+}
+span{
+  color: #a7c957;
+}
+.p1{
+  margin-top: 2rem;
+   font-style: italic;
+}

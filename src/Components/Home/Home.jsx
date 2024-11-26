@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './Home.css';
 import Hero from '../Hero/Hero';
 import Key from '../Key/Key';
+import Change from '../Change/Change';
+import ConservationCard from '../ConservationCard/ConservationCard';
+import Mission from '../Mission/Mission';
+import Youtube from '../Youtube/Youtube';
 function Home() {
   const images = [
     "https://www.sheldrickwildlifetrust.org/assets/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBK2RYQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--711a4a73f46dbe128923aff4d4f2e0e5845c2919/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9LYzJGMlpYSjdDam9LYzNSeWFYQlVPaEZ1YjE5emRXSnpZVzF3YkdWVU9nNXBiblJsY214aFkyVlVPaFJ2Y0hScGJXbDZaVjlqYjJScGJtZFVPZ3h4ZFdGc2FYUjVhVlU2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFKc0Iya0NzQVE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--a3beae31998acce4034ea21699f81133350de539/1-join-our-herd_1.jpg",
@@ -73,7 +77,10 @@ function Home() {
     </div>
     <Key/>
    <Hero/>
-  
+   <Change/>
+   <ConservationCard/>
+   <Mission/>
+   <Youtube/>
     </>
      
   );

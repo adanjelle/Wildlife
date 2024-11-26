@@ -29,12 +29,9 @@ function Navbar() {
             <i className="fa fa-angle-down cursor-pointer"></i>
           </div>
           {activeDropdown === 'projects' && (
-            <ul className="absolute left-0 mt-2 w-40 bg-white shadow-lg">
-              <li className="p-2 hover:bg-gray-400">
-                <Link to="/project/web">Web Projects</Link>
-              </li>
-              <li className="p-2 hover:bg-gray-200">
-                <Link to="/project/mobile">Mobile Projects</Link>
+            <ul className="absolute left-0 mt-2 w-45 bg-white shadow-lg">
+              <li className="p-2 hover:bg-gray-200 whitespace-nowrap">
+            <Link to="/projects/community">Community Outreage</Link>
               </li>
             </ul>
           )}
@@ -67,11 +64,8 @@ function Navbar() {
           </div>
           {activeDropdown === 'news' && (
             <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
-              <li className="p-2 hover:bg-gray-200">
-                <Link to="/new/events">Events</Link>
-              </li>
-              <li className="p-2 hover:bg-gray-200">
-                <Link to="/new/updates">Updates</Link>
+              <li className="p-2 hover:bg-gray-200 whitespace-nowrap">
+                <Link to="/news/wildlifeJournal">Wilderness Journal</Link>
               </li>
             </ul>
           )}
@@ -97,19 +91,17 @@ function Navbar() {
         </li>
 
       
-        <li className="relative" onMouseEnter={() => setActiveDropdown('social')} 
+        <li className="relative" onMouseEnter={() => setActiveDropdown('reports')} 
     onCompositionUpdateCapture={() => setActiveDropdown(null)}>
           <div className="icon-text">
-            <Link to="/social">Social Feed</Link>
+            <Link to="/reports">Reports</Link>
             <i className="fa fa-angle-down cursor-pointer"></i>
           </div>
-          {activeDropdown === 'social' && (
+          {activeDropdown === 'reports' && (
             <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
+              
               <li className="p-2 hover:bg-gray-200">
-                <Link to="/social/facebook">Facebook</Link>
-              </li>
-              <li className="p-2 hover:bg-gray-200">
-                <Link to="/social/twitter">Twitter</Link>
+                <Link to="/reports/reportC">Report case</Link>
               </li>
             </ul>
           )}
@@ -125,11 +117,9 @@ function Navbar() {
           {activeDropdown === 'visiting' && (
             <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
               <li className="p-2 hover:bg-gray-200">
-                <Link to="/visiting/hours">Visiting Hours</Link>
+                <Link to="/visiting/visitingG">Visiting Garissa</Link>
               </li>
-              <li className="p-2 hover:bg-gray-200">
-                <Link to="/visiting/tour">Tour Options</Link>
-              </li>
+             
             </ul>
           )}
         </li>
@@ -142,10 +132,10 @@ function Navbar() {
           {activeDropdown === 'about' && (
             <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
               <li className="p-2 hover:bg-gray-200">
-                <Link to="/about/team">Our Team</Link>
+                <Link to="/about/team">About us</Link>
               </li>
               <li className="p-2 hover:bg-gray-200">
-                <Link to="/about/mission">Our Mission</Link>
+                <Link to="/about/missionh">Our Mission</Link>
               </li>
             </ul>
           )}

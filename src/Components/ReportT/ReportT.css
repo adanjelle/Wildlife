@@ -1,0 +1,83 @@
+/* ReportForm.css */
+
+/* Animation for card hover effect */
+@keyframes cardHover {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.05);
+  }
+}
+
+/* Apply the hover animation */
+.card:hover {
+  animation: cardHover 0.5s ease-in-out;
+}
+
+/* Smooth input focus effect */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+/* ReportT.css */
+.form-section {
+  background-color: white; /* Neutral background */
+  border: 1px solid #e5e7eb; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 24px; /* Internal padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.form-section h3 {
+  font-size: 1.25rem; /* Adjust heading size */
+  font-weight: 600;
+  color: #374151; /* Neutral dark color */
+  margin-bottom: 1rem; /* Space below heading */
+}
+
+.form-section label {
+  font-weight: 500;
+  color: #4b5563; /* Neutral text color */
+  margin-bottom: 0.5rem;
+}
+
+.form-section input,
+.form-section textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 0.5rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+  border-color: #4caf50; /* Green highlight */
+}
+
+.form-section img {
+  max-width: 14%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}

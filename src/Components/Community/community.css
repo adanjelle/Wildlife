@@ -1,0 +1,111 @@
+.team-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.team-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem; /* Adjust the size as needed */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  white-space: nowrap; /* Prevent text from breaking into multiple lines */
+  animation: fadeInUp 1.4s ease-in-out;
+}
+.Dp {
+  text-align: center;
+  margin-top: 1.5rem; /* Equivalent to 32px */
+  color: brown;
+  margin-bottom: 4.475rem; /* Equivalent to 70px */
+  font-size: 1rem;
+  line-height: 2rem; /* Added line-height */
+  max-width: 90%; /* Extend width */
+  animation: fadeInUp 1.6s ease-in-out;
+}
+.imgg{
+  height: 5em;
+  width: 5em;
+  margin-left: 31.25em;
+}
+.work{
+  line-height: 35px;
+  font-size: 18px;
+  color: rgb(58, 55, 55);
+  margin: 5px;
+}
+.achieve {
+  background-image: url('https://img.freepik.com/free-photo/abstract-dense-red-fog_23-2148101961.jpg?ga=GA1.1.639500709.1727981040&semt=ais_hybrid');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2em; /* Add spacing inside the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  animation: fadeInUp 1.2s ease-in-out; /* Adjust height as needed */
+}
+
+.achieve p {
+  text-align: center;
+  font-size: 1.25rem; /* Adjust font size as needed */
+  font-weight: 500;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Add readability on background */
+  max-width: 800px; /* Optional: limit content width */
+  line-height: 1.8;
+  animation: fadeInUp 1.7s ease-in-out;
+}
+.centered {
+  margin: 40px auto; /* Centering with margin */
+  max-width: 600px; /* Limit the width for better readability */
+  text-align: justify;
+  padding: 20px 30px;
+   /* Subtle border for visual distinction */
+ 
+  /* White background for contrast */
+   /* Soft shadow for depth */
+  animation: fadeInUp 1.6s ease-in-out; /* Animation applied */
+}
+
+/* Adding animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Start below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at its original position */
+  }
+}
+.twinkle-text {
+  font-size: 20px;
+  color: #333;
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    color: #333; /* Original color */
+  }
+  50% {
+    opacity: 0.5;
+    color: #ff6347; /* Twinkling color (Tomato) */
+  }
+}
+.der{
+  color: #837676;
+}

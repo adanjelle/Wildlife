@@ -1,5 +1,6 @@
 import React from 'react'
 import './hero.css'
+
 function Hero() {
   return (
     <>
@@ -16,8 +17,8 @@ function Hero() {
      championing conservation efforts in East Africa.
     </p>
     </div>
-    
-    </>
+
+ </>
   )
 }
 

@@ -1,0 +1,110 @@
+.visit-container {
+  position: relative;
+  text-align: center;
+}
+
+.visit-image {
+  width: 100%;
+  max-height: 500px; /* Use a fixed max height in pixels */
+  display: block;
+  margin: 0 auto;
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+}
+
+.visit-overlay {
+  position: relative;
+}
+
+.centered-text1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3.5rem;
+  font-weight: bold;
+ /* Optional: Add a semi-transparent background for better readability */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .centered-text1 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    padding: 0.4rem 0.8rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .centered-text1 {
+    font-size: 1.2rem; /* Adjust font size for mobile devices */
+    padding: 0.3rem 0.6rem; /* Adjust padding for mobile devices */
+  }
+}
+.containerV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Adjust height as needed */
+}
+
+.DpV {
+  text-align: center;
+  margin-top: 1rem; 
+  color: rgb(169, 155, 155);
+  margin-bottom: 4.375rem; 
+  font-size: 1rem;
+  line-height: 2rem;
+}
+.nairobi-visit-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  gap: 2rem; /* Space between image and text */
+}
+
+.nairobi-visit-image {
+  width: 60%;
+  height: auto;
+
+  object-fit: cover;
+}
+
+.nairobi-visit-text {
+  width: 50%;
+  text-align: left;
+}
+
+.nairobi-visit-text h2 {
+  font-size: 2rem;
+  margin-bottom: 5rem;
+  color: #333;
+}
+
+.nairobi-visit-text p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .nairobi-visit-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nairobi-visit-image, .nairobi-visit-text {
+    width: 100%;
+  }
+
+  .nairobi-visit-text {
+    text-align: center;
+  }
+}
+hr{
+  margin-bottom: 3rem;
+}

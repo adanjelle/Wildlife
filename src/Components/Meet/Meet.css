@@ -1,0 +1,43 @@
+.section-meet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.secio {
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.2rem; /* Adjust the font size as needed */
+  line-height: 1.8;
+}
+.section-meet1 {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.src {
+  width: 1280px;
+  height: 450px;
+  object-fit: cover;
+}
+.card1 {
+  position: absolute;
+  top: 50%;
+  right: 68%; /* Adjusted right position to extend the card's length */
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  padding: 25px;
+  width: 400px; /* Increased width */
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+hr {
+  border: none;
+  border-top: 1.5px solid green;
+  margin: 10px;
+  width: 100%;
+}

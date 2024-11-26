@@ -1,0 +1,72 @@
+.unit-section {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.unit-image {
+  width: 60%; /* Ensure image takes up more space */
+  height: auto;
+  max-height: 400px; /* Set a maximum height for consistency */
+}
+
+.unit-card {
+  width: 40%; /* Adjusted width */
+  background: #e9ecef; /* Semi-transparent background */
+  padding: 25px;
+  margin-left: 5px;
+  height: 400px; /* Set a fixed height to match the image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(42, 38, 38, 0.1);
+  font-size: 1rem;
+  line-height: 2.3;
+}
+
+.unit-card h2  {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem; /* Increased font size */
+  color: rgb(69, 67, 67); /* Make the font bold */
+}
+
+.unit-card p {
+  margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .unit-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .unit-image,
+  .unit-card {
+    width: 100%;
+    max-height: 300px; /* Adjust height for smaller screens */
+  }
+
+  .unit-card {
+    margin-left: 0;
+    margin-top: 20px;
+    height: auto; /* Adjust height for smaller screens */
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .unit-section {
+    padding: 15px;
+  }
+
+  .unit-card h2 {
+    font-size: 1.2rem; /* Adjust font size for mobile devices */
+  }
+
+  .unit-card p {
+    font-size: 0.9rem; /* Adjust font size for mobile devices */
+    line-height: 1.6rem; /* Adjust line height for better readability */
+  }
+}
