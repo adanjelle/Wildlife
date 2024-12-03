@@ -1,60 +1,97 @@
 import React, { useState } from 'react';
+import { FaEnvelope, FaUser, FaLock } from 'react-icons/fa';
+import image2 from '../../Components/image/image2.png'; // Image for the form
 
 const Login = () => {
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    
-    if (!email || !password) {
-      setError('Both fields are required');
-      return;
-    }
-
-    console.log('Email:', email);
-    console.log('Password:', password);
-    
-    setEmail('');
-    setPassword('');
-    setError('');
+    alert('Login successful (placeholder functionality).');
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-3 bg-white rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center">Login</h2>
-        {error && <p className="text-red-500">{error}</p>}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email:</label>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100"> {/* Centering the entire page */}
+      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-sm relative"> {/* Added relative positioning to the container */}
+        {/* Close Button */}
+        <button
+          className="absolute top-4 right-4 text-gray-500 hover:text-red-500"
+          onClick={() => alert('Close button clicked!')}
+        >
+          X
+        </button>
+
+        {/* Header */}
+        <div className="text-center mb-4">
+          <h2 className="text-xl font-semibold text-gray-700">Login</h2>
+        </div>
+
+        {/* Top Image */}
+        <div className="mb-4">
+          <img
+            src={image2}
+            alt="Safaricom"
+            className="h-16 mx-auto rounded-full"
+          />
+        </div>
+
+        {/* Login Form */}
+        <form onSubmit={handleLogin} className="space-y-4">
+          {/* Email Field */}
+          <div className="relative">
+            <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="email"
-              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
-              className="block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ease-in-out"
+              placeholder="Enter your email"
+              className="w-full pl-10 py-2 border rounded-md shadow-sm focus:ring focus:ring-green-400"
             />
           </div>
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password:</label>
+
+          {/* Username Field */}
+          <div className="relative">
+            <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter your username"
+              className="w-full pl-10 py-2 border rounded-md shadow-sm focus:ring focus:ring-green-400"
+            />
+          </div>
+
+          {/* Password Field */}
+          <div className="relative">
+            <FaLock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
               type="password"
-              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              required
-              className="block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ease-in-out"
+              placeholder="Enter your password"
+              className="w-full pl-10 py-2 border rounded-md shadow-sm focus:ring focus:ring-green-400"
             />
           </div>
+
+          {/* Login Button */}
           <button
             type="submit"
-            className="w-full py-2 mt-4 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition duration-200 ease-in-out transform hover:scale-105"
+            className="w-full py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
           >
             Login
           </button>
+
+          {/* Forgot Password and Sign-Up Links */}
+          <div className="flex justify-between text-sm mt-4">
+            <a href="#forgot-password" className="text-green-600 hover:text-green-700">
+              Forgot Password?
+            </a>
+            <a href="#sign-up" className="text-green-600 hover:text-green-700">
+              Go to Sign-Up
+            </a>
+          </div>
         </form>
       </div>
     </div>

@@ -1,0 +1,71 @@
+.wildlife-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.wildlife-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  
+
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wildlife-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.wildlife-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.wildlife-content h3 {
+  font-size: 18px;
+  margin: 8px 0;
+  color: #333;
+}
+
+.wildlife-content p {
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: #555;
+}
+
+.read-more {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.read-more:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wildlife-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wildlife-card {
+    max-width: 100%;
+  }
+}

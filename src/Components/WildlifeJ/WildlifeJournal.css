@@ -6,7 +6,7 @@
 
 .src {
   width: 80em; /* Equivalent to 1280px */
-  height: 28.125em; /* Equivalent to 450px */
+  height: 30.125em; /* Equivalent to 450px */
   object-fit: cover; /* Keeps the image aspect ratio */
 }
 

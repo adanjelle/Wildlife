@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import image2 from '../../Components/image/image2.png';
+import SignUpForm from '../Sign-Up/Sign-Up';
 import './Navbar.css'; 
 
 function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [showSignUpForm, setShowSignUpForm] = useState(false);
+
+  const handleSignInClick = () => {
+    setShowSignUpForm(true); // Show the SignUpForm popup when "Sign-In" is clicked
+  };
+
+  const closeSignUpForm = () => {
+    setShowSignUpForm(false); // Close the SignUpForm popup
+  };
 
   const toggleDropdown = (dropdown) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
   return (
+    <>
     <nav className="navbar">
       <div className="navbar-logo">
         <Link to="/">
@@ -21,16 +32,16 @@ function Navbar() {
           />
         </Link>
       </div>
-      <ul className="navbar-items">
-        <li className="relative" onMouseEnter={() => setActiveDropdown('projects')} 
+      <ul className="navbar-items ">
+        <li className="relative " onMouseEnter={() => setActiveDropdown('projects')} 
         onCompositionUpdateCapture={() => setActiveDropdown(null)}>
           <div className="icon-text">
-            <Link to="/project">Projects</Link>
+            <Link to="/project" className="font-bold">Projects</Link>
             <i className="fa fa-angle-down cursor-pointer"></i>
           </div>
           {activeDropdown === 'projects' && (
-            <ul className="absolute left-0 mt-2 w-45 bg-white shadow-lg">
-              <li className="p-2 hover:bg-gray-200 whitespace-nowrap">
+            <ul className="absolute left-0 mt-2 w-45 bg-white shadow-lg ">
+              <li className="p-2 hover:bg-gray-200 whitespace-nowrap ">
             <Link to="/projects/community">Community Outreage</Link>
               </li>
             </ul>
@@ -40,7 +51,7 @@ function Navbar() {
         
         <li className="relative" onMouseEnter={() => setActiveDropdown('adopt')}  onCompositionUpdateCapture={() => setActiveDropdown(null)}>
           <div className="icon-text">
-            <Link to="/adopt">Adopt an Orphan</Link>
+            <Link to="/adopt" className="font-bold">Adopt an Orphan</Link>
             <i className="fa fa-angle-down cursor-pointer"></i>
           </div>
           {activeDropdown === 'adopt' && (
@@ -59,7 +70,7 @@ function Navbar() {
         <li className="relative" onMouseEnter={() => setActiveDropdown('news')} 
         onCompositionUpdateCapture={() => setActiveDropdown(null)}>
           <div className="icon-text">
-            <Link to="/new">News</Link>
+            <Link to="/new" className="font-bold">News</Link>
             <i className="fa fa-angle-down cursor-pointer"></i>
           </div>
           {activeDropdown === 'news' && (
@@ -75,7 +86,7 @@ function Navbar() {
         <li className="relative" onMouseEnter={() => setActiveDropdown('getInvolved')} 
          onCompositionUpdateCapture={() => setActiveDropdown(null)}>
           <div className="icon-text">
-            <Link to="/get-involved">Get Involved</Link>
+            <Link to="/get-involved" className="font-bold">Get Involved</Link>
             <i className="fa fa-angle-down cursor-pointer"></i>
           </div>
           {activeDropdown === 'getInvolved' && (
@@ -94,7 +105,7 @@ function Navbar() {
         <li className="relative" onMouseEnter={() => setActiveDropdown('reports')} 
     onCompositionUpdateCapture={() => setActiveDropdown(null)}>
           <div className="icon-text">
-            <Link to="/reports">Reports</Link>
+            <Link to="/reports" className="font-bold">Reports</Link>
             <i className="fa fa-angle-down cursor-pointer"></i>
           </div>
           {activeDropdown === 'reports' && (
@@ -111,7 +122,7 @@ function Navbar() {
         <li className="relative" onMouseEnter={() => setActiveDropdown('visiting')} 
          onCompositionUpdateCapture={() => setActiveDropdown(null)}>
           <div className="icon-text">
-            <Link to="/visiting">Visiting</Link>
+            <Link to="/visiting" className="font-bold">Visiting</Link>
             <i className="fa fa-angle-down cursor-pointer"></i>
           </div>
           {activeDropdown === 'visiting' && (
@@ -126,7 +137,7 @@ function Navbar() {
         <li className="relative" onMouseEnter={() => setActiveDropdown('about')}
       onCompositionUpdateCapture={() => setActiveDropdown(null)}>
           <div className="icon-text">
-            <Link to="/about">About</Link>
+            <Link to="/about" className="font-bold">About</Link>
             <i className="fa fa-angle-down cursor-pointer"></i>
           </div>
           {activeDropdown === 'about' && (
@@ -140,13 +151,18 @@ function Navbar() {
             </ul>
           )}
         </li>
-      </ul>
+        </ul>
+        <div className="navbar-buttons">
+          <button className="btn-donate" onClick={handleSignInClick}>
+            Sign-In
+          </button>
+          <button className="btn-donate">Donate</button>
+        </div>
+      </nav>
+      {showSignUpForm && <SignUpForm closeForm={closeSignUpForm} />}
+    </>
 
-      <div className="navbar-buttons">
-        <button className="btn-adopt">Adopt</button>
-        <button className="btn-donate">Donate</button>
-      </div>
-    </nav>
+    
   );
 }
 

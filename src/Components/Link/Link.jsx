@@ -8,17 +8,17 @@ function Links({ onRegionClick }) {
       <ul className="navbar-links">
         <li>
        
-          <Link to="/login"><i className="fas fa-sign-in-alt"></i> LOGIN</Link>
+          <Link to="/login" className="font-bold"><i className="fas fa-sign-in-alt"></i> LOGIN</Link>
         </li>
         <li>
-          <Link to="#" onClick={onRegionClick}><i className="fas fa-globe"></i>MY REGION: COLOR</Link>
+          <Link to="#"className="font-bold" onClick={onRegionClick}><i className="fas fa-globe"></i>MY REGION: COLOR</Link>
         </li>
         <li>
-          <Link to="/"><i className="fas fa-user-lock"></i>MY ACCOUNT</Link>
+          <Link to="/"className="font-bold"><i className="fas fa-user-lock"></i>MY ACCOUNT</Link>
         </li>
         <li>
-  <Link to="/contactpage">
-    <i className="fas fa-phone-alt"></i> CONTACT <span style={{ color: "orange" }}>(0)</span>
+  <Link to="/contactpage" className="font-bold">
+    <i className="fas fa-phone-alt "></i> CONTACT <span style={{ color: "orange" }}>(0)</span>
   </Link>
 </li>
 

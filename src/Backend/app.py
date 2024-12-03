@@ -1,7 +1,4 @@
 import os
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 from flask import Flask, request, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -16,7 +13,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = './uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-
 db = SQLAlchemy(app)
 
 # Models
@@ -61,36 +57,6 @@ contacts_schema = ContactSchema(many=True)
 report_schema = ReportSchema()
 reports_schema = ReportSchema(many=True)
 
-# Email Sender Function
-def send_email(contact_data):
-    sender_email = "your-email@gmail.com"
-    sender_password = "your-password"
-    recipient_email = "recipient-email@gmail.com"
-
-    subject = f"New Contact Form Submission from {contact_data['name']}"
-    body = f"""
-    Name: {contact_data['name']}
-    Email: {contact_data['email']}
-    Phone: {contact_data.get('phone', 'Not provided')}
-    Company: {contact_data.get('company', 'Not provided')}
-    Message: {contact_data['message']}
-    """
-
-    message = MIMEMultipart()
-    message["From"] = sender_email
-    message["To"] = recipient_email
-    message["Subject"] = subject
-    message.attach(MIMEText(body, "plain"))
-
-    try:
-        with smtplib.SMTP("smtp.gmail.com", 587) as server:
-            server.starttls()
-            server.login(sender_email, sender_password)
-            server.sendmail(sender_email, recipient_email, message.as_string())
-            print("Email sent successfully!")
-    except Exception as e:
-        print(f"Failed to send email: {e}")
-
 # Routes
 
 ## Contact Form Route
@@ -104,8 +70,6 @@ def create_contact():
         new_contact = Contact(**validated_data)
         db.session.add(new_contact)
         db.session.commit()
-
-        send_email(validated_data)
 
         return jsonify(contact_schema.dump(new_contact)), 201
     except ValidationError as err:

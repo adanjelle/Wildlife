@@ -1,0 +1,89 @@
+.info-card {
+  display: flex;
+  align-items: center;
+  margin: 50px;
+  max-width: 1200px;
+  padding: 40px;
+  gap: 20px;
+ background-color:aliceblue;
+  position: relative; /* For background positioning */
+   /* Optional: Rounded corners for a better design */
+}
+
+.image-info img {
+  max-width: 500px; /* Adjust image size to be smaller */
+  height: 300px;
+  
+}
+
+.info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 29px;
+}
+
+.info-container h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.info-container h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.info-container p {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.learn-more {
+  padding: 5px 10px; /* Make button smaller */
+  background-color: #2e772e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px; /* Smaller font size */
+  align-self: flex-start; /* Align button next to the image */
+  margin-top: 10px; /* Add some spacing from content */
+}
+
+.learn-more:hover {
+  background-color: #5adf82cc;
+}
+
+/* Fixed background corners */
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info-card {
+    flex-direction: column;
+  }
+
+  .image-info img {
+    max-width: 100%; /* Allow the image to stretch on small screens */
+    height: auto;
+  }
+
+  .info-container h2 {
+    font-size: 16px;
+  }
+
+  .info-container h3 {
+    font-size: 14px;
+  }
+
+  .info-container p {
+    font-size: 12px;
+  }
+
+  .learn-more {
+    font-size: 10px; /* Further reduce button size on small screens */
+    padding: 4px 8px;
+  }
+}
