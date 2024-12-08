@@ -14,7 +14,7 @@ function Links({ onRegionClick }) {
           <Link to="#"className="font-bold" onClick={onRegionClick}><i className="fas fa-globe"></i>MY REGION: COLOR</Link>
         </li>
         <li>
-          <Link to="/"className="font-bold"><i className="fas fa-user-lock"></i>MY ACCOUNT</Link>
+          <Link to="/profile" className="font-bold"><i className="fas fa-user-lock"></i>MY ACCOUNT</Link>
         </li>
         <li>
   <Link to="/contactpage" className="font-bold">

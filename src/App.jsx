@@ -15,19 +15,19 @@ import AdminDashboard from './Components/Admin/dashbord';
 import Login from './Components/Login/Login';
 import Community from './Components/Community/Community';
 import WildlifeJournal from './Components/WildlifeJ/WildlifeJournal';
-
+import ResourcesD from './Components/Resources/ResourcesD';
 import './App.css'; 
 
 
 function App() {
   const [theme, setTheme] = useState('default');
-
   const handleRegionClick = () => {
     setTheme(theme === 'default' ? 'yellow' : 'default');
   };
 
   return (
     <div className={`app ${theme}`}>
+            
       <Router>
         <Links onRegionClick={handleRegionClick} />
         <Navbar />
@@ -39,9 +39,10 @@ function App() {
           <Route path="/more" element={<More />} /> {/* Ensure this route is defined */}
           <Route path="/visiting/visitingG" element={<VisitingG />} />
           <Route path="/contactpage" element={<Contactpage />} />
-          <Route path="/login" element= {<Login />}/>
+          <Route path="/login"   element= {<Login />}/>
           <Route path="/reports/reportC" element={<ReportC />} />
           <Route path="/projects/community" element={<Community />} />
+          <Route path="/resources/resourcesD" element={<ResourcesD/>} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/news/wildlifejournal" element={<WildlifeJournal />} />
            {/* Add Admin Dashboard Route */}

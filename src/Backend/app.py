@@ -1,3 +1,4 @@
+from flask_mail import Mail, Message
 import os
 from flask import Flask, request, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
@@ -7,6 +8,16 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 CORS(app)
+
+# Initialize Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Use your email provider's SMTP server
+app.config['MAIL_PORT'] = 465  # SSL port
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = 'adanjelle4@gmail.com'  # Replace with your email
+app.config['MAIL_PASSWORD'] = 'bjaw jiwl tjak zaws'  # Replace with your email password or app-specific password
+app.config['MAIL_DEFAULT_SENDER'] = 'no-reply@wilfierescuehub.com'  # Sender email
+
+mail = Mail(app)
 
 # Configuration
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
@@ -65,15 +76,34 @@ def create_contact():
     if request.method == 'OPTIONS':
         return jsonify({'message': 'Preflight request successful'}), 200
     try:
+        # Get the contact data
         data = request.json
         validated_data = contact_schema.load(data)
+
+        # Save the contact to the database
         new_contact = Contact(**validated_data)
         db.session.add(new_contact)
         db.session.commit()
 
+        # Send the thank you email to the contactor
+        send_thank_you_email(validated_data['email'], validated_data['name'])
+
         return jsonify(contact_schema.dump(new_contact)), 201
     except ValidationError as err:
         return jsonify(err.messages), 400
+
+# Send a thank you email for contact form
+def send_thank_you_email(to_email, name):
+    msg = Message(
+        'Thank you for contacting Wilfie Rescue Hub',
+        recipients=[to_email]
+    )
+    msg.body = f"Dear {name},\n\nThank you for reaching out to us! We have received your message and will get back to you as soon as possible.\n\nBest regards,\nWilfie Rescue Hub Team"
+    
+    try:
+        mail.send(msg)
+    except Exception as e:
+        print(f"Error sending email: {e}")
 
 ## Report Submission Route
 @app.route('/report', methods=['POST'])
@@ -99,12 +129,28 @@ def submit_report():
         db.session.add(new_report)
         db.session.commit()
 
+        # Send email after report is submitted
+        send_report_email(validated_data['sender_email'], validated_data['sender_name'], validated_data['animal_type'])
+
         return jsonify(report_schema.dump(new_report)), 201
 
     except ValidationError as err:
         return jsonify(err.messages), 400
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+# Send email when report is submitted
+def send_report_email(to_email, name, animal_type):
+    msg = Message(
+        'Report Successfully Submitted to Wilfie Rescue Hub',
+        recipients=[to_email]
+    )
+    msg.body = f"Dear {name},\n\nThank you for submitting a report regarding the animal: {animal_type}. We have received your report and will process it as soon as possible.\n\nBest regards,\nWilfie Rescue Hub Team"
+    
+    try:
+        mail.send(msg)
+    except Exception as e:
+        print(f"Error sending email: {e}")
 
 ## Get All Reports Route
 @app.route('/reports', methods=['GET'])

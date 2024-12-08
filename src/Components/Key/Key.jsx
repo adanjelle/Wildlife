@@ -5,7 +5,7 @@ function Key() {
     <>
     <div>
       <h2 className='Key'>Wildlife is key</h2>
-      <img  src='https://rewildingeurope.com/wp-content/uploads/2020/09/SWD-002295-2048x1355.jpg'/>
+      <img  src='https://rewildingeurope.com/wp-content/uploads/2020/09/SWD-002295-2048x1355.jpg'alt='adesh'/>
     </div>
   
     </>
