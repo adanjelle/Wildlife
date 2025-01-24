@@ -16,9 +16,9 @@ import Login from './Components/Login/Login';
 import Community from './Components/Community/Community';
 import WildlifeJournal from './Components/WildlifeJ/WildlifeJournal';
 import ResourcesD from './Components/Resources/ResourcesD';
+import Association from './Components/Association/Association';
 import './App.css'; 
-
-
+import WildlifeRescueH from './Components/WildlifeRescueH/WildlifeRescueH';
 function App() {
   const [theme, setTheme] = useState('default');
   const handleRegionClick = () => {
@@ -34,18 +34,19 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about/team" element={<Team />} />
-       
+        <Route path="/ambush/association" element={<Association />} />
           <Route path="/about/missionh" element={<MissionH />} />
-          <Route path="/more" element={<More />} /> {/* Ensure this route is defined */}
+          <Route path="/more" element={<More />} /> 
           <Route path="/visiting/visitingG" element={<VisitingG />} />
           <Route path="/contactpage" element={<Contactpage />} />
-          <Route path="/login"   element= {<Login />}/>
+          <Route path="/somali/WildlifeRescueH" element={<WildlifeRescueH />} />
+          <Route path="/login" element= {<Login />}/>
           <Route path="/reports/reportC" element={<ReportC />} />
           <Route path="/projects/community" element={<Community />} />
           <Route path="/resources/resourcesD" element={<ResourcesD/>} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/news/wildlifejournal" element={<WildlifeJournal />} />
-           {/* Add Admin Dashboard Route */}
+           
         </Routes>
       </Router>
       <Footer />

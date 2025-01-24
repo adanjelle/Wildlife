@@ -1,23 +1,29 @@
 import React from "react";
 import "./Ambush.css"; // Import the CSS file for styling
-
+import { useNavigate } from "react-router-dom";
 const Ambush= () => {
+  const navigate = useNavigate(); 
+
+  const handleLearnMore = () => {
+    navigate('/Ambush/Association');  // Correct the path
+  };
   return (
     <div className="info-card">
       <div className="image-info">
         <img
-          src="https://www.sheldrickwildlifetrust.org/assets/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbERiIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--50a16ae45a4e341fb9eae9993f55f485bd035a01/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9LYzJGMlpYSjdDam9LYzNSeWFYQlVPaEZ1YjE5emRXSnpZVzF3YkdWVU9nNXBiblJsY214aFkyVlVPaFJ2Y0hScGJXbDZaVjlqYjJScGJtZFVPZ3h4ZFdGc2FYUjVhVVk2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQW13SGFRSWdBdz09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--154957a2f0d526d0b6123e1275208f69430628f2/img_8598.jpeg"
+          src="https://www.kws.go.ke/sites/default/files/styles/medium/public/2024-10/Oct%2025%20KWS%20DG%20Dr%20Erustus%20Kanga%20addresses%20conference%20delegates2.jpg?itok=YCw_tXdS"
           alt="Somali Watha"
         />
       </div>
       <div className="info-container">
-        <h2>28 March 2020</h2>
-        <h3>The Somali</h3>
+        <h2> 25, Oct 2024</h2>
+        <h3>The Kenya Wildlife Service (KWS) </h3>
         <p>
-          These days the Watha are a mysterious people, able to blend almost
-          seamlessly with surrounding communities.
+        The Kenya Wildlife Service (KWS) is enhancing partnerships with the Kenya Association of
+         Tour Operators (KATO)
+         to advance wildlife conservation and boost Kenya’s tourism industry
         </p>
-        <button className="learn-more">Learn More</button>
+        <button className="learn-more" onClick={handleLearnMore}>Learn More</button>
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 import React from 'react';
-
+import adesh from '../../Components/image/adesh.jpg';
 const WildlifeRescue = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="max-w-6xl w-full bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
         <img
-          src=""
+          src={adesh}
           alt="NAEE Cover"
           className="w-full md:w-1/2 h-64 md:h-auto object-cover"
         />

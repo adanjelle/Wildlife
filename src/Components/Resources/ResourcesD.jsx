@@ -1,6 +1,8 @@
 import React from 'react'
 import './Resources.css'
 import WildlifeRescue from '../WildlifeRescue/WildlifeRescue'
+import Critical from '../Critical/Critical'
+import Sightings from '../Sightings/Sightings'
 function ResourcesD() {
   return (
     <>
@@ -14,9 +16,11 @@ function ResourcesD() {
       <div className="centered-text">Educational Resources</div>
     </div>
     <div className='public'>
-      Reports & Publications
+      Educational Resournces
       </div>
       <WildlifeRescue/>
+      <Critical/>
+      <Sightings/>
 </>
   )
 }

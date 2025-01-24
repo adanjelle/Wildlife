@@ -6,10 +6,12 @@ import './Navbar.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
 function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [showSignUpForm, setShowSignUpForm] = useState(false);
-
+ 
   const handleSignInClick = () => {
     setShowSignUpForm(true); // Show the SignUpForm when "Sign-In" is clicked
   };
@@ -43,28 +45,13 @@ function Navbar() {
             </div>
             {activeDropdown === 'projects' && (
               <ul className="absolute left-0 mt-2 w-45 bg-white shadow-lg">
-                <li className="p-2 hover:bg-gray-200 whitespace-nowrap">
+                <li className="p-2 hover:bg-gray-200 whitespace-nowrap tracking-wider">
                   <Link to="/projects/community">Community Outreach</Link>
                 </li>
               </ul>
             )}
           </li>
-          <li className="relative" onMouseEnter={() => setActiveDropdown('adopt')} onCompositionUpdateCapture={() => setActiveDropdown(null)}>
-            <div className="icon-text">
-              <Link to="/adopt" className="font-bold">Adopt an Orphan</Link>
-              <i className="fa fa-angle-down cursor-pointer"></i>
-            </div>
-            {activeDropdown === 'adopt' && (
-              <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
-                <li className="p-2 hover:bg-gray-200">
-                  <Link to="/adopt/child">Adopt a Child</Link>
-                </li>
-                <li className="p-2 hover:bg-gray-200">
-                  <Link to="/adopt/family">Adopt a Family</Link>
-                </li>
-              </ul>
-            )}
-          </li>
+          
           <li className="relative" onMouseEnter={() => setActiveDropdown('news')} onCompositionUpdateCapture={() => setActiveDropdown(null)}>
             <div className="icon-text">
               <Link to="/new" className="font-bold">News</Link>
@@ -72,7 +59,7 @@ function Navbar() {
             </div>
             {activeDropdown === 'news' && (
               <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
-                <li className="p-2 hover:bg-gray-200 whitespace-nowrap">
+                <li className="p-2 hover:bg-gray-200 whitespace-nowrap  ">
                   <Link to="/news/wildlifeJournal">Wilderness Journal</Link>
                 </li>
               </ul>
@@ -112,7 +99,7 @@ function Navbar() {
             </div>
             {activeDropdown === 'visiting' && (
               <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
-                <li className="p-2 hover:bg-gray-200">
+                <li className="p-2 hover:bg-gray-200  ">
                   <Link to="/visiting/visitingG">Visiting Garissa</Link>
                 </li>
               </ul>
@@ -125,10 +112,10 @@ function Navbar() {
             </div>
             {activeDropdown === 'about' && (
               <ul className="absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg">
-                <li className="p-2 hover:bg-gray-200">
+                <li className="p-2 hover:bg-gray-200  ">
                   <Link to="/about/team">About us</Link>
                 </li>
-                <li className="p-2 hover:bg-gray-200">
+                <li className="p-2 hover:bg-gray-200 ">
                   <Link to="/about/missionh">Our Mission</Link>
                 </li>
               </ul>
@@ -139,7 +126,7 @@ function Navbar() {
           <button className="btn-donate" onClick={handleSignInClick}>
             Sign-Up
           </button>
-          <button className="btn-donate">Donate</button>
+          
         </div>
       </nav>
       <ToastContainer />

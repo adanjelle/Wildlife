@@ -31,7 +31,7 @@ const Tsavo = () => {
           <div className="wildlife-content">
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-            <button className="read-more">Read More</button>
+         
           </div>
         </div>
       ))}

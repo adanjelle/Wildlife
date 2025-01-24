@@ -9,24 +9,24 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 CORS(app)
 
-# Initialize Flask-Mail
+# Initialize Flask-Mail🤑🤑🤑
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'  # Use your email provider's SMTP server
 app.config['MAIL_PORT'] = 465  # SSL port
 app.config['MAIL_USE_SSL'] = True
 app.config['MAIL_USERNAME'] = 'adanjelle4@gmail.com'  # Replace with your email
-app.config['MAIL_PASSWORD'] = 'bjaw jiwl tjak zaws'  # Replace with your email password or app-specific password
+app.config['MAIL_PASSWORD'] = 'bjaw jiwl tjak zaws'  # Replace with your email password🤗😏
 app.config['MAIL_DEFAULT_SENDER'] = 'no-reply@wilfierescuehub.com'  # Sender email
 
 mail = Mail(app)
 
-# Configuration
+# Configuration😈👿
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOAD_FOLDER'] = './uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 db = SQLAlchemy(app)
 
-# Models
+# Models💀💀
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -70,7 +70,7 @@ reports_schema = ReportSchema(many=True)
 
 # Routes
 
-## Contact Form Route
+## Contact Form Route➡➡➡〽🔅🔆
 @app.route('/api/contact', methods=['POST', 'OPTIONS'])
 def create_contact():
     if request.method == 'OPTIONS':
