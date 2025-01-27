@@ -74,7 +74,7 @@ const ContactForm = () => {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">Contact us</h2>
           <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-500">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.
+          "We’d love to hear from you! Whether you have questions, feedback, or need assistance, feel free to reach out. Our team is here to help and will get back to you as soon as possible."
           </p>
         </div>
 

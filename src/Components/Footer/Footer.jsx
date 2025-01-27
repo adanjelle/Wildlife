@@ -8,13 +8,13 @@ function Footer() {
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-2 gap-x-5 gap-y-12 md:grid-cols-4 md:gap-x-12">
             <div>
-              <p className="text-base text-gray-500">Company</p>
+              <p className="text-base text-gray-500"></p>
               <ul className="mt-8 space-y-4">
                 <li>
-                  <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> About </a>
+                  <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Reports </a>
                 </li>
                 <li>
-                  <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Features </a>
+                  <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Visiting </a>
                 </li>
                 <li>
                   <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Works </a>
@@ -44,10 +44,10 @@ function Footer() {
             </div>
 
             <div>
-              <p className="text-base text-gray-500">Resources</p>
+              <p className="text-base text-gray-500">About</p>
               <ul className="mt-8 space-y-4">
                 <li>
-                  <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Free eBooks </a>
+                  <a href="https://www.facebook.com/profile.php?id=100088238157476" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Facebook </a>
                 </li>
                 <li>
                   <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Development Tutorial </a>
@@ -56,7 +56,7 @@ function Footer() {
                   <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> How to - Blog </a>
                 </li>
                 <li>
-                  <a href="#" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> YouTube Playlist </a>
+                  <a href="https://www.linkedin.com/in/adan-jelle-634630312/" title="" className="text-base text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Linkdin </a>
                 </li>
               </ul>
             </div>
