@@ -31,7 +31,7 @@ const ContactPage = () => {
   return (
     <>
     <div className="contact-page" style={{ backgroundImage: `url(${currentImage})` }}>
-      <div className="contact-content">Contact Us</div>
+      <div style={{fontStyle:"italic"}} className="contact-content">Contact Us</div>
     </div>
     <ContactForm/>
     </>

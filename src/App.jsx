@@ -17,8 +17,9 @@ import Community from './Components/Community/Community';
 import WildlifeJournal from './Components/WildlifeJ/WildlifeJournal';
 import ResourcesD from './Components/Resources/ResourcesD';
 import Association from './Components/Association/Association';
+import ResetPassword from './Components/Resetpassword/Resetpassord';
 import './App.css'; 
-import WildlifeRescueH from './Components/WildlifeRescueH/WildlifeRescueH';
+// import WildlifeRescueH from './Components/WildlifeRescueH/WildlifeRescueH';
 function App() {
   const [theme, setTheme] = useState('default');
   const handleRegionClick = () => {
@@ -46,7 +47,7 @@ function App() {
           <Route path="/resources/resourcesD" element={<ResourcesD/>} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/news/wildlifejournal" element={<WildlifeJournal />} />
-           
+          {/* <Route path="/reset-password/:token" element={<ResetPassword />} /> */}
         </Routes>
       </Router>
       <Footer />

@@ -171,7 +171,7 @@ def forgot_password():
         If you did not request this, please ignore this email.
 
         Best,
-        Your App Team
+        Wildlife Rescue Team
         """
 
         # Send email

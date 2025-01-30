@@ -92,7 +92,7 @@ const ForgotPassword = ({ setShowModal }) => {
         className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 transition-colors duration-200 ease-in-out"
         aria-label="Close"
       >
-        <FaTimes size={18} />  {/* Smaller X icon */}
+        <FaTimes size={15} />  {/* Smaller X icon */}
       </button>
     </div>
   );
