@@ -94,7 +94,6 @@ def sign_up():
         )
         db.session.add(new_user)
         db.session.commit()
-
         # Serialize user data
         user_schema = UserSchema()
         result = user_schema.dump(new_user)
@@ -104,7 +103,6 @@ def sign_up():
         print("An error occurred:", str(e))
         print(traceback.format_exc())
         return jsonify({'message': 'An error occurred during sign-up'}), 400
-
 # Login route
 @app.route('/login', methods=['POST'])
 def login():
