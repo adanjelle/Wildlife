@@ -34,7 +34,8 @@ importlib-metadata==4.6.4
 itsdangerous==2.2.0
 jeepney==0.7.1
 Jinja2==3.1.4
-keyring==23.5.0
+keyring==23.5.0ls -l render.yaml
+
 launchpadlib==1.10.16
 lazr.restfulclient==0.14.4
 lazr.uri==1.0.6
