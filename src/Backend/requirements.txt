@@ -45,7 +45,10 @@ marshmallow-sqlalchemy==1.1.0
 more-itertools==8.10.0
 msgspec==0.18.6
 netifaces==0.11.0
+numpy==2.2.2
 oauthlib==3.2.0
+opencv-python==4.11.0.86
+opencv-python-headless==4.11.0.86
 packaging==24.1
 pikepdf==9.2.1
 pillow==10.4.0
