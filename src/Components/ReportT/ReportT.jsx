@@ -59,7 +59,7 @@ function ReportForm() {
         },
       });
 
-      toast.success("Report submitted successfully!", {
+      toast.success("✅ Report submitted successfully!", {
         position: "top-center",
         autoClose: 3000,
       });
@@ -74,8 +74,8 @@ function ReportForm() {
       });
       setImagePreview(null);
     } catch (error) {
-      console.error("There was an error submitting the report:", error);
-      toast.error("Failed to submit the report!", {
+      console.error("Error submitting report:", error);
+      toast.error("❌ Failed to submit the report!", {
         position: "top-center",
         autoClose: 3000,
       });
@@ -83,12 +83,16 @@ function ReportForm() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100 px-4">
       <ToastContainer />
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">
-          Report Damaged Animal
+      <div className="bg-white shadow-2xl rounded-2xl p-8 sm:p-10 max-w-xl w-full transition-transform transform hover:scale-[1.01] duration-300">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-green-700 mb-6">
+          🐾 Report Damaged Animal
         </h2>
+        <p className="text-center text-gray-500 mb-8">
+          Please provide accurate details to help us respond quickly.
+        </p>
+
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Animal Type */}
           <div>
@@ -105,7 +109,7 @@ function ReportForm() {
               value={formData.animal_type}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 text-gray-700 placeholder-gray-400"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring focus:ring-green-200 text-gray-700 placeholder-gray-400"
               placeholder="Enter animal type"
             />
           </div>
@@ -124,48 +128,51 @@ function ReportForm() {
               value={formData.damage_description}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 text-gray-700 placeholder-gray-400"
+              rows={4}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring focus:ring-green-200 text-gray-700 placeholder-gray-400 resize-none"
               placeholder="Describe the damage"
             />
           </div>
 
           {/* Sender Details */}
-          <div>
-            <label
-              htmlFor="sender_name"
-              className="block text-sm font-semibold text-gray-700 mb-2"
-            >
-              Your Name
-            </label>
-            <input
-              type="text"
-              id="sender_name"
-              name="sender_name"
-              value={formData.sender_name}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 text-gray-700 placeholder-gray-400"
-              placeholder="Enter your name"
-            />
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label
+                htmlFor="sender_name"
+                className="block text-sm font-semibold text-gray-700 mb-2"
+              >
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="sender_name"
+                name="sender_name"
+                value={formData.sender_name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring focus:ring-green-200 text-gray-700 placeholder-gray-400"
+                placeholder="Enter your name"
+              />
+            </div>
 
-          <div>
-            <label
-              htmlFor="sender_email"
-              className="block text-sm font-semibold text-gray-700 mb-2"
-            >
-              Your Email
-            </label>
-            <input
-              type="email"
-              id="sender_email"
-              name="sender_email"
-              value={formData.sender_email}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 text-gray-700 placeholder-gray-400"
-              placeholder="Enter your email"
-            />
+            <div>
+              <label
+                htmlFor="sender_email"
+                className="block text-sm font-semibold text-gray-700 mb-2"
+              >
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="sender_email"
+                name="sender_email"
+                value={formData.sender_email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring focus:ring-green-200 text-gray-700 placeholder-gray-400"
+                placeholder="Enter your email"
+              />
+            </div>
           </div>
 
           <div>
@@ -182,7 +189,7 @@ function ReportForm() {
               value={formData.sender_address}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 text-gray-700 placeholder-gray-400"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring focus:ring-green-200 text-gray-700 placeholder-gray-400"
               placeholder="Enter your address"
             />
           </div>
@@ -201,14 +208,14 @@ function ReportForm() {
               name="image"
               accept="image/*"
               onChange={handleFileChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 text-gray-700 placeholder-gray-400"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring focus:ring-green-200 text-gray-700 placeholder-gray-400"
             />
             {imagePreview && (
               <div className="mt-4 text-center">
                 <img
                   src={imagePreview}
                   alt="Preview"
-                  className="max-h-48 rounded-md shadow-md"
+                  className="max-h-48 rounded-lg shadow-md border border-gray-200"
                 />
               </div>
             )}
@@ -218,7 +225,7 @@ function ReportForm() {
           <div className="text-center">
             <button
               type="submit"
-              className="w-full py-3 px-4 rounded-lg bg-green-500 text-white hover:bg-green-700 focus:ring-4 focus:ring-blue-300 shadow-md transition-all duration-300"
+              className="w-full py-3 px-4 rounded-lg bg-green-600 text-white font-semibold text-lg hover:bg-green-700 focus:ring-4 focus:ring-green-300 shadow-md transition-all duration-300"
             >
               Submit Report
             </button>

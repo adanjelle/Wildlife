@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
+import "react-toastify/dist/ReactToastify.css";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
 
-const ContactForm = () => {
+const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -11,27 +12,25 @@ const ContactForm = () => {
     message: "",
   });
 
-  const [loading, setLoading] = useState(false); // For button state
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault();
     setLoading(true);
 
     try {
       const response = await fetch("http://localhost:5000/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        toast.success("Message sent successfully!");
+        toast.success("✅ Message sent successfully!");
         setFormData({
           name: "",
           email: "",
@@ -40,136 +39,154 @@ const ContactForm = () => {
           message: "",
         });
       } else {
-        const errorMessage = `Failed to send message. Status: ${response.status}`;
-        toast.error(errorMessage);
-        console.error(errorMessage);
-        // Clear the input fields even if there is an error
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          message: "",
-        });
+        toast.error("❌ Failed to send message. Try again.");
       }
     } catch (error) {
       console.error("Error:", error);
-      toast.error("An error occurred while sending the message.");
-      // Clear the input fields even if there is an error
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
-      });
+      toast.error("⚠️ Something went wrong.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="py-10 bg-gray-100 sm:py-16 lg:py-24">
-      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">Contact us</h2>
-          <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-500">
-          "We’d love to hear from you! Whether you have questions, feedback, or need assistance, feel free to reach out. Our team is here to help and will get back to you as soon as possible."
-          </p>
-        </div>
+    <div className="bg-gray-50">
+      {/* Hero Section */}
+      <div
+        className="relative h-64 bg-cover bg-center flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "url('https://www.amaica.co.ke/wp-content/uploads/2020/04/contactbanner.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <h1 className="relative text-4xl md:text-5xl font-bold text-white z-10">
+          Contact Us
+        </h1>
+      </div>
 
-        <div className="max-w-5xl mx-auto mt-12 sm:mt-16">
-          <form onSubmit={handleSubmit} className="bg-white rounded-xl p-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4">
-              <div>
-                <label htmlFor="name" className="text-base font-medium text-gray-900">
-                  Your name
-                </label>
+      {/* Contact Section */}
+      <section className="py-16 px-6 lg:px-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Form */}
+          <div className="bg-white shadow-xl rounded-2xl p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              Get in Touch
+            </h2>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <input
                   type="text"
                   name="name"
-                  id="name"
+                  placeholder="Full Name"
+                  required
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Enter your full name"
-                  className="block w-full px-4 py-4 mt-2 bg-white border rounded-md"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500"
                 />
-              </div>
-              <div>
-                <label htmlFor="email" className="text-base font-medium text-gray-900">
-                  Email address
-                </label>
                 <input
                   type="email"
                   name="email"
-                  id="email"
+                  placeholder="Email Address"
+                  required
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Enter your email address"
-                  className="block w-full px-4 py-4 mt-2 bg-white border rounded-md"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500"
                 />
-              </div>
-              <div>
-                <label htmlFor="phone" className="text-base font-medium text-gray-900">
-                  Phone number
-                </label>
                 <input
                   type="tel"
                   name="phone"
-                  id="phone"
+                  placeholder="Phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Enter your phone number"
-                  className="block w-full px-4 py-4 mt-2 bg-white border rounded-md"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500"
                 />
-              </div>
-              <div>
-                <label htmlFor="company" className="text-base font-medium text-gray-900">
-                  Company name
-                </label>
                 <input
                   type="text"
                   name="company"
-                  id="company"
+                  placeholder="Company"
                   value={formData.company}
                   onChange={handleChange}
-                  placeholder="Enter your company name"
-                  className="block w-full px-4 py-4 mt-2 bg-white border rounded-md"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500"
                 />
               </div>
-              <div className="sm:col-span-2">
-                <label htmlFor="message" className="text-base font-medium text-gray-900">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Enter your message"
-                  rows="4"
-                  className="block w-full px-4 py-4 mt-2 bg-white border rounded-md"
-                ></textarea>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Write your message..."
+                required
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500"
+              ></textarea>
+              <button
+                type="submit"
+                disabled={loading}
+                className={`w-full py-4 text-lg font-semibold rounded-lg text-white transition-all ${
+                  loading
+                    ? "bg-gray-400"
+                    : "bg-green-600 hover:bg-green-700"
+                }`}
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-900">
+              Contact Information
+            </h2>
+            <p className="text-gray-600">
+              Reach us anytime using the details below or by filling out the
+              contact form.
+            </p>
+
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <FaMapMarkerAlt className="text-green-600 text-xl" />
+                <span>
+                  Wildlife Rescue Team HQ, <br />
+                  P.O. Box 40241 - 00100 Wajir, Kenya
+                </span>
               </div>
-              <div className="sm:col-span-2">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className={`w-full px-4 py-4 mt-2 text-white rounded-md ${
-                    loading ? "bg-gray-400" : "bg-green-600"
-                  }`}
+
+              <div className="flex items-center gap-4">
+                <FaPhone className="text-green-600 text-xl" />
+                <span>
+                  Toll Free: 0800 597 000 <br />
+                  Mobile: +254 727774164 / +254 722529312
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FaEnvelope className="text-green-600 text-xl" />
+                <span>
+                  WildlifeRescue.go.ke <br />
+                Wildlife Rescue Team
+                </span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FaGlobe className="text-green-600 text-xl" />
+                <a
+                  href="https://reservations.kws.go.ke/"
+                  className="text-green-700 font-medium hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  {loading ? "Sending..." : "Send"}
-                </button>
+                  reservations.kws.go.ke
+                </a>
               </div>
             </div>
-          </form>
-
-          <ToastContainer /> {/* Add ToastContainer to render notifications */}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <ToastContainer position="top-right" />
+    </div>
   );
 };
 
-export default ContactForm;
+export default ContactPage;

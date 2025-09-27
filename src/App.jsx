@@ -1,56 +1,111 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Links from './Components/Link/Link';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import Navbar from './Components/Navbar/Navbar';
-import Home from './Components/Home/Home';
-import Footer from './Components/Footer/Footer';
-import Team from './Components/Team/Team';
-import More from './Components/More/More';
-import MissionH from './Components/MissionH/MissionH';
-import VisitingG from './Components/VisitingG/VisitingG';
-import Contactpage from './Components/Contactpage/Contactpage'; 
-import ReportC from './Components/ReportC/ReportC';
-import AdminDashboard from './Components/Admin/dashbord';
-import Login from './Components/Login/Login';
-import Community from './Components/Community/Community';
-import WildlifeJournal from './Components/WildlifeJ/WildlifeJournal';
-import ResourcesD from './Components/Resources/ResourcesD';
-import Association from './Components/Association/Association';
-import ResetPassword from './Components/Resetpassword/Resetpassord';
-import './App.css'; 
+// import React, { useState } from 'react';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import Links from './Components/Link/Link';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
+// import Navbar from './Components/Navbar/Navbar';
+// import Home from './Components/Home/Home';
+// import Footer from './Components/Footer/Footer';
+// import Team from './Components/Team/Team';
+// import More from './Components/More/More';
+// import MissionH from './Components/MissionH/MissionH';
+// import VisitingG from './Components/VisitingG/VisitingG';
+// import Contactpage from './Components/Contactpage/Contactpage'; 
+// import ReportC from './Components/ReportC/ReportC';
+// import AdminDashboard from './Components/Admin/dashbord';
+// import Login from './Components/Login/Login';
+// import Community from './Components/Community/Community';
+// import WildlifeJournal from './Components/WildlifeJ/WildlifeJournal';
+// import ResourcesD from './Components/Resources/ResourcesD';
+// import Association from './Components/Association/Association';
+// // import ResetPassword from './Components/Resetpassword/Resetpassord';
+// import './App.css'; 
 // import WildlifeRescueH from './Components/WildlifeRescueH/WildlifeRescueH';
+// function App() {
+//   const [theme, setTheme] = useState('default');
+//   const handleRegionClick = () => {
+//     setTheme(theme === 'default' ? 'yellow' : 'default');
+//   };
+
+//   return (
+//     <div className={`app ${theme}`}>
+            
+//       <Router>
+//         <Links onRegionClick={handleRegionClick} />
+//         <Navbar />
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/about/team" element={<Team />} />
+//         <Route path="/ambush/association" element={<Association />} />
+//           <Route path="/about/missionh" element={<MissionH />} />
+//           <Route path="/more" element={<More />} /> 
+//           <Route path="/visiting/visitingG" element={<VisitingG />} />
+//           <Route path="/contactpage" element={<Contactpage />} />
+//           <Route path="/somali/WildlifeRescueH" element={<WildlifeRescueH />} />
+//           <Route path="/login" element= {<Login />}/>
+//           <Route path="/reports/reportC" element={<ReportC />} />
+//           <Route path="/projects/community" element={<Community />} />
+//           <Route path="/resources/resourcesD" element={<ResourcesD/>} />
+//           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+//           <Route path="/news/wildlifejournal" element={<WildlifeJournal />} />
+//           {/* <Route path="/reset-password/:token" element={<ResetPassword />} /> */}
+//         </Routes>
+//       </Router>
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// export default App;
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import Team from "./Components/Team/Team";
+import More from "./Components/More/More";
+import MissionH from "./Components/MissionH/MissionH";
+import VisitingG from "./Components/VisitingG/VisitingG";
+import Contactpage from "./Components/Contactpage/Contactpage";
+import ReportC from "./Components/ReportC/ReportC";
+import AdminDashboard from "./Components/Admin/dashbord";
+import Login from "./Components/Login/Login";
+import Community from "./Components/Community/Community";
+import WildlifeJournal from "./Components/WildlifeJ/WildlifeJournal";
+import ResourcesD from "./Components/Resources/ResourcesD";
+import Association from "./Components/Association/Association";
+import WildlifeRescueH from "./Components/WildlifeRescueH/WildlifeRescueH";
+import PublicLayout from "./Components/PublicLayout/PublicLayout"; // 👈 import layout
+import "./App.css";
+
 function App() {
-  const [theme, setTheme] = useState('default');
+  const [theme, setTheme] = useState("default");
   const handleRegionClick = () => {
-    setTheme(theme === 'default' ? 'yellow' : 'default');
+    setTheme(theme === "default" ? "yellow" : "default");
   };
 
   return (
     <div className={`app ${theme}`}>
-            
       <Router>
-        <Links onRegionClick={handleRegionClick} />
-        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about/team" element={<Team />} />
-        <Route path="/ambush/association" element={<Association />} />
-          <Route path="/about/missionh" element={<MissionH />} />
-          <Route path="/more" element={<More />} /> 
-          <Route path="/visiting/visitingG" element={<VisitingG />} />
-          <Route path="/contactpage" element={<Contactpage />} />
-          <Route path="/somali/WildlifeRescueH" element={<WildlifeRescueH />} />
-          <Route path="/login" element= {<Login />}/>
-          <Route path="/reports/reportC" element={<ReportC />} />
-          <Route path="/projects/community" element={<Community />} />
-          <Route path="/resources/resourcesD" element={<ResourcesD/>} />
+          {/* ✅ Public routes wrapped in layout */}
+          <Route element={<PublicLayout onRegionClick={handleRegionClick} />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about/team" element={<Team />} />
+            <Route path="/ambush/association" element={<Association />} />
+            <Route path="/about/missionh" element={<MissionH />} />
+            <Route path="/more" element={<More />} />
+            <Route path="/visiting/visitingG" element={<VisitingG />} />
+            <Route path="/contactpage" element={<Contactpage />} />
+            <Route path="/somali/WildlifeRescueH" element={<WildlifeRescueH />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/reports/reportC" element={<ReportC />} />
+            <Route path="/projects/community" element={<Community />} />
+            <Route path="/resources/resourcesD" element={<ResourcesD />} />
+            <Route path="/news/wildlifejournal" element={<WildlifeJournal />} />
+          </Route>
+
+          {/* ✅ Admin route without Navbar/Footer */}
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
-          <Route path="/news/wildlifejournal" element={<WildlifeJournal />} />
-          {/* <Route path="/reset-password/:token" element={<ResetPassword />} /> */}
         </Routes>
       </Router>
-      <Footer />
     </div>
   );
 }
